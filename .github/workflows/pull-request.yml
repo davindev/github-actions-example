@@ -6,20 +6,24 @@ jobs:
   install-dependencies:
     name: 'Install Dependencies'
     runs-on: ubuntu-latest
-    stpes:
+    steps:
       - uses: actions/checkout@v3
+
       - uses: actions/setup-node@v3
-      with:
-        node-version: '14'
+        with:
+          node-version: '14'
+
       - run: npm install
 
   lint:
     name: 'Lint'
     needs: [install-dependencies]
     runs-on: ubuntu-latest
-    stpes:
+    steps:
       - uses: actions/checkout@v3
+
       - uses: actions/setup-node@v3
-      with:
-        node-version: '14'
+        with:
+          node-version: '14'
+
       - run: npm run lint
