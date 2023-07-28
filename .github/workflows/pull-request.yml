@@ -4,7 +4,7 @@ on:
     types: [opened, synchronize]
 jobs:
   install-dependencies:
-    name: 'Install Dependencies'
+    name: Install Dependencies
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -13,10 +13,11 @@ jobs:
         with:
           node-version: '14'
 
-      - run: npm install
+      - name: Install Dependencies
+        run: npm install
 
   lint:
-    name: 'Lint'
+    name: Lint
     needs: [install-dependencies]
     runs-on: ubuntu-latest
     steps:
@@ -26,4 +27,8 @@ jobs:
         with:
           node-version: '14'
 
-      - run: npm run lint
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Run Lint
+        run: npm run lint
