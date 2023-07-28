@@ -1,0 +1,25 @@
+name: Pull Request
+on:
+  pull_request:
+    types: [opened, synchronize]
+jobs:
+  install-dependencies:
+    name: 'Install Dependencies'
+    runs-on: ubuntu-latest
+    stpes:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+      with:
+        node-version: '14'
+      - run: npm install
+
+  lint:
+    name: 'Lint'
+    needs: [install-dependencies]
+    runs-on: ubuntu-latest
+    stpes:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+      with:
+        node-version: '14'
+      - run: npm lint
