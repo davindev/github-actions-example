@@ -33,8 +33,8 @@ jobs:
       - name: Run Lint
         run: npm run lint
 
-  unit-test:
-    name: Unit Test
+  test:
+    name: Test
     needs: [install-dependencies]
     runs-on: ubuntu-latest
     steps:
