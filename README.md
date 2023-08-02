@@ -14,5 +14,4 @@ npm start
 ```
 
 3. 브라우저에서 http://localhost:3000 으로 진입하면 어플리케이션을 사용할 수 있습니다.
-
 ![](https://velog.velcdn.com/images/davin/post/cc94b821-20b4-430b-a651-120f5ac1ab04/image.png)
